@@ -22,14 +22,15 @@ requirements:
     - python ${{ python_min }}.*
     - pip
     - setuptools >=77.0.3
+    - wheel
   run:
     - python >=${{ python_min }}
-    - azure-core >=1.37.0
-    - azure-identity >=1.15.0
-    - azure-storage-blob >=12.15.0
     - isodate >=0.6.1
-    - openai >=2.8.0
+    - azure-core >=1.37.0
     - typing_extensions >=4.11
+    - azure-identity >=1.15.0
+    - openai >=3.0.0
+    - azure-storage-blob >=12.15.0
 
 tests:
   - python:
