@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: azure-ai-projects
-  version: "2.7.0"
+  version: "2.9.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
-  sha256: ba3c6626bfa710031de37f927ae488ca9614168382407d7b2bb8d6e20fe32ff8
+  sha256: f85902b1c220f5ef999f7892d5fa8b6f1efecf867c73b107df7de614f5821fd3
 
 build:
   number: 0
@@ -31,6 +31,12 @@ requirements:
     - azure-identity >=1.15.0
     - openai >=3.0.0
     - azure-storage-blob >=12.15.0
+  run_constraints:
+    # temporary: the solver can pick azure-ai-projects 2.9.0 + msal_extensions
+    # 0.3.0, whose conda metadata lacks its portalocker ~=1.0 pin (pip check
+    # fails with portalocker 3.x)
+    - msal_extensions >=1.2
+    
 
 tests:
   - python:
