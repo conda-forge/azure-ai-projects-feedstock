@@ -31,9 +31,11 @@ requirements:
     - azure-identity >=1.15.0
     - openai >=3.0.0
     - azure-storage-blob >=12.15.0
-  run_constrained:
-    # temporary constraint needed to get pip check to pass
-    - msal-extensions >=1.3.0
+  run_constraints:
+    # temporary: the solver can pick azure-ai-projects 2.9.0 + msal_extensions
+    # 0.3.0, whose conda metadata lacks its portalocker ~=1.0 pin (pip check
+    # fails with portalocker 3.x)
+    - msal_extensions >=1.2
     
 
 tests:
