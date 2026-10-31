@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: azure-ai-projects
-  version: "2.9.0"
+  version: "2.10.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
-  sha256: f85902b1c220f5ef999f7892d5fa8b6f1efecf867c73b107df7de614f5821fd3
+  sha256: c1edbb1241c973538a85de45a467edf9d6c244916c01cf68751eedbe65e7f37f
 
 build:
   number: 0
@@ -36,7 +36,7 @@ requirements:
     # 0.3.0, whose conda metadata lacks its portalocker ~=1.0 pin (pip check
     # fails with portalocker 3.x)
     - msal_extensions >=1.2
-    
+
 
 tests:
   - python:
