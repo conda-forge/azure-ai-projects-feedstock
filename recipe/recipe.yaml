@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: azure-ai-projects
-  version: "2.10.0"
+  version: "2.11.0"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name | replace('-', '_') }}-${{ version }}.tar.gz
-  sha256: c1edbb1241c973538a85de45a467edf9d6c244916c01cf68751eedbe65e7f37f
+  sha256: eda340da7cabffd0b05b4b5bb8c6c8a5b7a5a8fca495785a1097f2fec8c153f8
 
 build:
   number: 0
